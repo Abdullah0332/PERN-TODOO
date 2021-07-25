@@ -11,7 +11,7 @@ const ListTodos = () => {
 
   const deleteTodo = async (id) => {
     try {
-      await axios.delete(`https://perntodo01.herokuapp.com/todos/${id}`);
+      await axios.delete(`http://localhost:5000/todos/${id}`);
 
       setTodos(todos.filter((todo) => todo.todo_id !== id));
     } catch (err) {
@@ -21,7 +21,7 @@ const ListTodos = () => {
 
   const getTodos = async () => {
     try {
-      const data = await axios.get("https://perntodo01.herokuapp.com/todos");
+      const data = await axios.get("http://localhost:5000/todos");
 
       setTodos(data?.data);
     } catch (err) {

@@ -5,13 +5,14 @@ const pool = require("./db");
 const path = require("path");
 
 const app = express();
-app.use(cors());
-app.use(express.json());
 
 require("dotenv").config({ path: "./.env" });
+
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 
+app.use(cors());
+app.use(express.json());
 // ROUTES
 
 // create a todo

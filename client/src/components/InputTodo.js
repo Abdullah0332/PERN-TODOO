@@ -10,7 +10,7 @@ const InputTodo = () => {
     try {
       const body = { description };
 
-      await axios.post("https://perntodo01.herokuapp.com/create-todo", body);
+      await axios.post("http://localhost:5000/create-todo", body);
 
       window.location = "/";
     } catch (err) {

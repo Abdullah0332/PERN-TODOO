@@ -12,10 +12,7 @@ const EditTodo = ({ todo }) => {
     try {
       const body = { description };
 
-      await axios.put(
-        `https://perntodo01.herokuapp.com/todos/${todo.todo_id}`,
-        body
-      );
+      await axios.put(`http://localhost:5000/todos/${todo.todo_id}`, body);
 
       window.location = "/";
     } catch (err) {
@@ -33,6 +30,7 @@ const EditTodo = ({ todo }) => {
       >
         Edit
       </button>
+
       <div
         class="modal"
         id={`id${todo.todo_id}`}
